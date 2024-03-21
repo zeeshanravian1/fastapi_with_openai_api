@@ -1,21 +1,17 @@
 """
-    Main file for project
+Main file for project
 
-    Description:
-    - This program is main file for project.
-    - It is used to create FastAPI object and add all routes to it.
+Description:
+- This program is main file for project.
+- It is used to create FastAPI object and add all routes to it.
 
 """
 
-# Importing Python Packages
-
-# Importing FastAPI Packages
 from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import RedirectResponse
 from fastapi.openapi.docs import get_redoc_html, get_swagger_ui_html
+from fastapi.responses import RedirectResponse
 
-# Importing Project Files
 from core import (
     core_configuration,
     custom_generate_unique_id,
@@ -23,8 +19,6 @@ from core import (
     router,
 )
 
-
-# Router Object to Create Routes
 app = FastAPI(
     docs_url=core_configuration.DOCS_URL,
     redoc_url=core_configuration.REDOC_URL,
@@ -33,9 +27,6 @@ app = FastAPI(
     description=core_configuration.PROJECT_DESCRIPTION,
     version=core_configuration.VERSION,
 )
-
-
-# -----------------------------------------------------------------------------
 
 
 app.add_middleware(

@@ -1,19 +1,10 @@
 """
-    Core Response Message Module
+Core Response Message Module
 
-    Description:
-    - This module is responsible for core response messages.
+Description:
+- This module is responsible for core response messages.
 
 """
-
-# Importing Python Packages
-
-# Importing FastAPI Packages
-
-# Importing Project Files
-
-
-# -----------------------------------------------------------------------------
 
 
 class CoreResponseMessage:

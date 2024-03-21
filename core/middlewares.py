@@ -1,28 +1,21 @@
 """
-    Middlewares Module
+Middlewares Module
 
-    Description:
-    - This module contains all middlewares used in project.
+Description:
+- This module contains all middlewares used in project.
 
 """
 
-# Importing Python Packages
 import logging
-from pydantic import ValidationError
-from openai import error
 
-# Importing FastAPI Packages
 from fastapi import HTTPException, Request, Response, status
 from fastapi.responses import JSONResponse
+from openai import error
+from pydantic import ValidationError
 
-# Importing Project Files
 from .response_message import core_response_message
 
-
 exception_logger = logging.getLogger(__name__)
-
-
-# -----------------------------------------------------------------------------
 
 
 async def exception_handling(request: Request, call_next):
@@ -91,9 +84,7 @@ async def exception_handling(request: Request, call_next):
         exception_logger.exception(msg=err)
         return JSONResponse(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            content={
-                "detail": core_response_message.SERVICE_UNAVAILABLE_ERROR
-            },
+            content={"detail": core_response_message.SERVICE_UNAVAILABLE_ERROR},
         )
 
     except ValidationError as err:

@@ -1,21 +1,13 @@
 """
-    Core Configuration Module
+Core Configuration Module
 
-    Description:
-    - This module is responsible for core configuration and read values from
-    environment file.
+Description:
+- This module is responsible for core configuration and read values from
+environment file.
 
 """
 
-# Importing Python Packages
 from pydantic_settings import BaseSettings
-
-# Importing FastAPI Packages
-
-# Importing Project Files
-
-
-# -----------------------------------------------------------------------------
 
 
 class CoreConfiguration(BaseSettings):

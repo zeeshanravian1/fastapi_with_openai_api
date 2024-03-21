@@ -1,29 +1,21 @@
 """
-    Blog Route Module
+Blog Route Module
 
-    Description:
-    - This module is responsible for handling Blog routes.
-    - It is used to get the product details and return the response in HTML
-    format.
+Description:
+- This module is responsible for handling Blog routes.
+- It is used to get the product details and return the response in HTML
+format.
 
 """
 
-# Importing Python Packages
 import openai
-
-# Importing FastAPI Packages
-from fastapi import APIRouter, Request, Form, Depends, status
+from fastapi import APIRouter, Depends, Form, Request, status
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-# Importing Project Files
 from core.configuration import core_configuration
 
-# Router Object to Create Routes
 router = APIRouter(prefix="/blog", tags=["Blog"])
-
-
-# -----------------------------------------------------------------------------
 
 
 templates = Jinja2Templates(directory="static/templates")
